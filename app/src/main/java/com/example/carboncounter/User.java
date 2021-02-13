@@ -6,8 +6,11 @@ public class User{
     float gas;
     float dairy;
     float water;
-    public User(float beef, float gas, float dairy, float water){
+    public User(float beef, float pork, float lamb, float, chicken, float gas, float dairy, float water){
         this.beef = beef;
+        this.pork = pork;
+        this.lamb = lamb;
+        this.chicken = chicken;
         this.gas = gas;
         this.dairy = dairy;
         this.water = water;
