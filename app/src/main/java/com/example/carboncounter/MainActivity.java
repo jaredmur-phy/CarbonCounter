@@ -15,7 +15,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         goButton();
+        myStatsLaunch();
 
+    }
+
+    private void myStatsLaunch() {
+        Button statsActivity = (Button) findViewById(R.id.myStats);
+        statsActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MyStats.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void goButton() {
