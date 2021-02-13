@@ -79,4 +79,13 @@ public class User{
     public void setWater(float water) {
         this.water = water;
     }
+    public float calcTransport(){
+        return this.gas * 2.4;
+    }
+    public float calcMeat(){
+        return this.beef * 27 + this.pork * 12.1 + this.lamb * 39.2 + this.chicken * 6.9;
+    }
+
+
+
 }
