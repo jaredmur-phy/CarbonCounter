@@ -1,5 +1,6 @@
 <u><b>CarbonCounter</b></u>
 
+
 CarbonCounter is based off the book [How Bad Are Bananas? The Carbon Footprint of Everything](https://www.amazon.ca/dp/B004VO4IZY/ref=cm_sw_em_r_mt_dp_TSJQQW7B48NCYFGY4MBS)!
 
 It allows the user to track their weekly carbon footprint, saves their stats, and allows them to see their best weeks so far!
@@ -7,7 +8,9 @@ With multiple different options to track, like food, water and fuel, this app wi
 After calculating, the user is prompted to save a screenshot of their results to brag to their friends about!
 The app will also save all statistics inbetween runs, with a mercy button implemented to allow a user to reset all their statistics, to try for a fresh highscore!
 
+
 <b><u>Install and Use:</b></u>
+
 
 There are two ways to install
 1. Download the project as a zip, unzip and open in Android Studio, or clone the repo into Android Studio.
