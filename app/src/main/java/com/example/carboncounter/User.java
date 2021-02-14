@@ -1,7 +1,7 @@
 package com.example.carboncounter;
 
 public class User{
-    float beef, pork, lamb, chicken, gas, dairy, water;
+    float beef, pork, lamb, chicken, gas, dairy, water, transport, meat, dairyCalc, waterCalc, total;
 
     private static User instance;
 
@@ -17,20 +17,25 @@ public class User{
     }
 
     public float calcTransport(){
-        return (float) (this.gas * 2.4);
+        this.transport = (float) (this.gas * 2.4);
+        return this.transport;
     }
     public float calcMeat(){
-        return (float) (this.beef * 27 + this.pork * 12.1 + this.lamb * 39.2 + this.chicken * 6.9);
+        this.meat = (float) (this.beef * 27 + this.pork * 12.1 + this.lamb * 39.2 + this.chicken * 6.9);
+        return this.meat;
     }
 
     public float calcDairy(){
-        return (float) (this.dairy * 0.93);
+        this.dairyCalc = (float) (this.dairy * 0.93);
+        return this.dairyCalc;
     }
     public float calcWater(){
-        return (float) (this.water * 0.38);
+        this.waterCalc = (float) (this.water * 0.38);
+        return this.waterCalc;
     }
     public float calcTotal(){
-        return this.calcTransport() + this.calcDairy() + this.calcWater() + this.calcMeat();
+        this.total = transport + dairyCalc + waterCalc + meat;
+        return this.total;
     }
 
     //Getters and Setters
