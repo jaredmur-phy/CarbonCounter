@@ -8,6 +8,56 @@
     tools:context=".MyStats">
 
     <TextView
+        android:id="@+id/beefBestHeader4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Meat:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thisWeekHeader" />
+
+    <TextView
+        android:id="@+id/beefGasHeader3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Gas:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beefBestHeader4" />
+
+    <TextView
+        android:id="@+id/bestTotalHeader2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Total:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bestDairyHeader3" />
+
+    <TextView
+        android:id="@+id/bestDairyHeader3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Dairy:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bestWaterHeader3" />
+
+    <TextView
+        android:id="@+id/bestWaterHeader3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Water:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beefGasHeader3" />
+
+    <TextView
         android:id="@+id/beefGasHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -143,4 +193,49 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/beefRecent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/beefBestHeader4"
+        app:layout_constraintTop_toBottomOf="@+id/thisWeekHeader" />
+
+    <TextView
+        android:id="@+id/gasRecent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/beefGasHeader3"
+        app:layout_constraintTop_toBottomOf="@+id/beefRecent" />
+
+    <TextView
+        android:id="@+id/waterRecent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/bestWaterHeader3"
+        app:layout_constraintTop_toBottomOf="@+id/gasRecent" />
+
+    <TextView
+        android:id="@+id/dairyRecent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/bestDairyHeader3"
+        app:layout_constraintTop_toBottomOf="@+id/waterRecent" />
+
+    <TextView
+        android:id="@+id/totalRecent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/bestTotalHeader2"
+        app:layout_constraintTop_toBottomOf="@+id/dairyRecent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@ import static java.lang.Math.round;
 
 public class CalculatorResults extends AppCompatActivity {
     public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String RECENT_PREFS = "recentPrefs";
     public static final String BEEF =  "beef";
     public static final String GAS = "gas";
     public static final String WATER = "water";
@@ -85,6 +86,18 @@ public class CalculatorResults extends AppCompatActivity {
         }
 
         editor.commit();
+
+        SharedPreferences recentPrefs = getSharedPreferences(RECENT_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editNew = recentPrefs.edit();
+
+        editNew.putInt(BEEF, beef);
+        editNew.putInt(GAS, gas);
+        editNew.putInt(WATER, water);
+        editNew.putInt(DAIRY, dairy);
+        editNew.putInt(TOTAL, total);
+
+        editNew.commit();
+
         return;
 
     }

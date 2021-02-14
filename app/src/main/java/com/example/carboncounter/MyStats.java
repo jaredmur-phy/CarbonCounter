@@ -17,6 +17,7 @@ public class MyStats extends AppCompatActivity {
     public static final String WATER = "water";
     public static final String DAIRY = "dairy";
     public static final String TOTAL = "total";
+    public static final String RECENT_PREFS = "recentPrefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +77,25 @@ public class MyStats extends AppCompatActivity {
     }
 
     private void displayLastCalculation() {
+        SharedPreferences recentPrefs = getSharedPreferences(RECENT_PREFS, MODE_PRIVATE);
+
+        int beef = recentPrefs.getInt(BEEF, 10000);
+        int gas = recentPrefs.getInt(GAS, 10000);
+        int water = recentPrefs.getInt(WATER, 10000);
+        int dairy = recentPrefs.getInt(DAIRY, 10000);
+        int total = recentPrefs.getInt(TOTAL, 10000);
+
+        TextView beefRecent = (TextView) findViewById(R.id.beefRecent);
+        TextView gasRecent = (TextView) findViewById(R.id.gasRecent);
+        TextView waterRecent = (TextView) findViewById(R.id.waterRecent);
+        TextView dairyRecent = (TextView) findViewById(R.id.dairyRecent);
+        TextView totalRecent = (TextView) findViewById(R.id.totalRecent);
+
+        beefRecent.setText(String.valueOf(beef));
+        gasRecent.setText(String.valueOf(gas));
+        waterRecent.setText(String.valueOf(water));
+        dairyRecent.setText(String.valueOf(dairy));
+        totalRecent.setText(String.valueOf(total));
 
     }
 
