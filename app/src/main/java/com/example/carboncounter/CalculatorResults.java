@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
+import static java.lang.Math.round;
+
 public class CalculatorResults extends AppCompatActivity {
 
     User user = User.getInstance();
@@ -38,5 +42,22 @@ public class CalculatorResults extends AppCompatActivity {
         float totalResult = user.calcTotal();
         TextView total = (TextView) findViewById(R.id.totalCalculated);
         total.setText(String.valueOf(totalResult));
+
+        double compareResults = (double) (totalResult / 55.35714) * 100; //avg for BC
+        int roundedResult = Integer.parseInt(String.valueOf(compareResults));
+        TextView compared = (TextView) findViewById(R.id.compared);
+        if(compareResults < 100.0) {
+            String result = String.valueOf(roundedResult);
+            compared.setText("You are " + result + "% better than average");
+        } else {
+            String result = String.valueOf(roundedResult - 100.0);
+            compared.setText("You are " + result + "% worse than average");
+        }
+
+        saveStats(((int)(Math.round(beefResult))), ((int)(Math.round(gasResult))), ((int)(Math.round(waterResult))), ((int)(Math.round(dairyResult))), ((int)(Math.round(totalResult))));
+    }
+
+    private void saveStats(int beef, int gas, int water, int dairy, int total) {
+        //
     }
 }
