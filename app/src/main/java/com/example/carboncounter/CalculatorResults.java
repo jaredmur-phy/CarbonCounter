@@ -3,15 +3,20 @@ package com.example.carboncounter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.text.DecimalFormat;
 
 import static java.lang.Math.round;
-
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 public class CalculatorResults extends AppCompatActivity {
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String RECENT_PREFS = "recentPrefs";
@@ -29,6 +34,7 @@ public class CalculatorResults extends AppCompatActivity {
         setContentView(R.layout.activity_calculator_results);
 
         calculateShow();
+        saveResults();
     }
 
     private void calculateShow() {
@@ -100,5 +106,39 @@ public class CalculatorResults extends AppCompatActivity {
 
         return;
 
+    }
+    private Bitmap takeScreenshot() {
+        View screenshot = findViewById(android.R.id.content).getRootView();
+        screenshot.setDrawingCacheEnabled(true);
+        return screenshot.getDrawingCache();
+    } //takes the screenshot
+    private void saveScreenshot(Bitmap finalBitmap, String image_name) {
+
+        String root = Environment.getExternalStorageDirectory().toString();
+        File myDir = new File(root);
+        myDir.mkdirs();
+        String fname = "Image-" + image_name+ ".jpg";
+        File file = new File(myDir, fname);
+        if (file.exists()) file.delete();
+        Log.i("LOAD", root + fname);
+        try {
+            FileOutputStream out = new FileOutputStream(file);
+            finalBitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
+            out.flush();
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private void saveResults(){
+        Button saveButton = (Button) findViewById(R.id.save);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bitmap bitmap = takeScreenshot();
+                saveScreenshot(bitmap, "results");
+
+            }
+        });
     }
 }
