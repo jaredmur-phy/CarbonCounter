@@ -13,7 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Meat:"
+        android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thisWeekHeader" />
 
@@ -22,8 +25,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Gas:"
+        android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/beefBestHeader4" />
 
@@ -33,7 +39,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Total:"
+        android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bestDairyHeader3" />
 
@@ -42,8 +51,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Dairy:"
+        android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bestWaterHeader3" />
 
@@ -53,7 +65,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Water:"
+        android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/beefGasHeader3" />
 
@@ -63,8 +78,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Gas:"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/beefBestHeader" />
 
@@ -74,8 +91,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Water:"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/beefGasHeader" />
 
@@ -85,8 +104,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Dairy:"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bestWaterHeader" />
 
@@ -96,8 +117,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Total:"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bestDairyHeader" />
 
@@ -106,7 +129,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="This Week:"
+        android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -116,8 +142,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="356dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Best Week:"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -129,8 +157,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Meat:"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lastWeekHeader" />
 
@@ -138,9 +168,10 @@
         android:id="@+id/meatBest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="7dp"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/beefBestHeader"
         app:layout_constraintTop_toBottomOf="@+id/lastWeekHeader" />
 
@@ -148,9 +179,10 @@
         android:id="@+id/gasBest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="6dp"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/beefGasHeader"
         app:layout_constraintTop_toBottomOf="@+id/meatBest" />
 
@@ -159,8 +191,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="6dp"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/bestWaterHeader"
         app:layout_constraintTop_toBottomOf="@+id/gasBest" />
 
@@ -168,9 +201,10 @@
         android:id="@+id/dairyBest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="5dp"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/bestDairyHeader"
         app:layout_constraintTop_toBottomOf="@+id/waterBest" />
 
@@ -178,9 +212,10 @@
         android:id="@+id/totalBest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="6dp"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/bestTotalHeader"
         app:layout_constraintTop_toBottomOf="@+id/dairyBest" />
 
@@ -189,6 +224,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Reset"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -198,8 +234,10 @@
         android:id="@+id/beefRecent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="7dp"
+        android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/beefBestHeader4"
         app:layout_constraintTop_toBottomOf="@+id/thisWeekHeader" />
 
@@ -207,8 +245,10 @@
         android:id="@+id/gasRecent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/beefGasHeader3"
         app:layout_constraintTop_toBottomOf="@+id/beefRecent" />
 
@@ -217,7 +257,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/bestWaterHeader3"
         app:layout_constraintTop_toBottomOf="@+id/gasRecent" />
 
@@ -225,8 +267,10 @@
         android:id="@+id/dairyRecent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/bestDairyHeader3"
         app:layout_constraintTop_toBottomOf="@+id/waterRecent" />
 
@@ -234,8 +278,10 @@
         android:id="@+id/totalRecent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/bestTotalHeader2"
         app:layout_constraintTop_toBottomOf="@+id/dairyRecent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

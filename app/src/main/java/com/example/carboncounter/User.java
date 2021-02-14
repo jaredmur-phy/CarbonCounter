@@ -6,7 +6,7 @@ User singleton object
 - Calculator functions to return appropriate kg C02
 */
 public class User{
-    float beef, pork, lamb, chicken, gas, dairy, water, transport, meat, dairyCalc, waterCalc, total;
+    float beef, pork, lamb, chicken, gas, dairy, water, transport, meat, dairyCalc, waterCalc, total = 0;
 
     private static User instance;
 

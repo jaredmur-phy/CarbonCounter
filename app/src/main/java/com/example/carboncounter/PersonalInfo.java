@@ -21,7 +21,18 @@ public class PersonalInfo extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_personal_info);
 
+        resetUser();
         setCalculateButton();
+    }
+
+    private void resetUser() {
+        user.setWater(0);
+        user.setDairy(0);
+        user.setGas(0);
+        user.setChicken(0);
+        user.setLamb(0);
+        user.setPork(0);
+        user.setBeef(0);
     }
 
     private void setCalculateButton() {

@@ -12,8 +12,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:background="#34FFFFFF"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Carbon from Dairy:"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/waterCalculated" />
@@ -23,8 +26,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:background="#00BBBBB9"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Carbon from Meat:"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,6 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/beefResult" />
@@ -44,8 +51,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:background="#34FFFFFF"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Carbon from Gas:"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/beefCalculated" />
@@ -56,6 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gasHeader" />
@@ -65,8 +76,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:background="#34FFFFFF"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Carbon from Water:"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gasCalculated" />
@@ -77,6 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/waterHeader" />
@@ -87,6 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dairyHeader" />
@@ -96,8 +112,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:background="#34FFFFFF"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Total Carbon in Pounds:"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dairyCalculated" />
@@ -108,6 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/totalHeader" />
@@ -117,8 +137,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:background="#34FFFFFF"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Compared to BC residents:"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/totalCalculated" />
@@ -128,7 +151,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:backgroundTint="#FFFFFF"
         android:textColor="@color/colorText"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/comparedHeader" />
@@ -137,10 +162,11 @@
         android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.942" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
