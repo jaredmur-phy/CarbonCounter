@@ -17,5 +17,7 @@ There are two ways to install
 2. Sync all gradle files (There are external library dependencies)
 3. Run on a emulator through Android Device Manager, or connect a physical Android device and upload there if you are familiar. We recommend a basic emulator running <b>Android 7 or higher</b>
 
+Feel free to check out the images and screen recording in [Demo Images & Videos](https://csil-git1.cs.surrey.sfu.ca/jma165/carboncounter/-/tree/master/Demo%20Images%20%26%20Videos)
+
 Made by: Brian Lin ([bcl19@sfu.ca](mailto:bcl19@sfu.ca))
          Jared Murphy ([jma165@sfu.ca](mailto:jma165@sfu.ca))
