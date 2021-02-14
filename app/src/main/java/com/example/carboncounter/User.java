@@ -1,5 +1,10 @@
 package com.example.carboncounter;
 
+/*
+User singleton object
+- Stores all meats, and other carbon sources
+- Calculator functions to return appropriate kg C02
+*/
 public class User{
     float beef, pork, lamb, chicken, gas, dairy, water, transport, meat, dairyCalc, waterCalc, total;
 

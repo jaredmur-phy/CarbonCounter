@@ -1,14 +1,16 @@
 package com.example.carboncounter;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
+/*
+Welcome screen
+- Creates two buttons to direct user to stats and calculator
+*/
 public class MainActivity extends AppCompatActivity {
 
     @Override

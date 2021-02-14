@@ -2,22 +2,36 @@ package com.example.carboncounter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import static java.lang.Math.round;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
+
+/*
+This activity:
+- Calculates the carbon used based on user input from calling activity
+- Calculates how the user fares against the BC average from 2017
+- Displays results
+- Allows the user to screenshot their results
+- Saves results if they beat their "best result" for viewing
+- Saves results no matter what for "most recent" viewing
+*/
 public class CalculatorResults extends AppCompatActivity {
+
+    //SharedPreferences
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String RECENT_PREFS = "recentPrefs";
     public static final String BEEF =  "beef";
@@ -26,7 +40,13 @@ public class CalculatorResults extends AppCompatActivity {
     public static final String DAIRY = "dairy";
     public static final String TOTAL = "total";
 
+    //Screenshot
+    private Bitmap bitmap;
+    private AppCompatActivity activity = CalculatorResults.this;
+
+    //Singleton use
     User user = User.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +57,9 @@ public class CalculatorResults extends AppCompatActivity {
         saveResults();
     }
 
+    /*
+    Calculates carbon results from values saved in singleton, shows them to user
+    */
     private void calculateShow() {
         float beefResult = user.calcMeat();
         TextView beef = (TextView) findViewById(R.id.beefCalculated);
@@ -68,10 +91,11 @@ public class CalculatorResults extends AppCompatActivity {
             String result = String.valueOf(roundedResult - 100.0);
             compared.setText("You are " + result + "% worse than average");
         }
-
+        //Rounds results before sending to SharedPreferences
         saveStats(((int)(Math.round(beefResult))), ((int)(Math.round(gasResult))), ((int)(Math.round(waterResult))), ((int)(Math.round(dairyResult))), ((int)(Math.round(totalResult))));
     }
 
+    //SharedPreferences, to save both best results and most recent results
     private void saveStats(int beef, int gas, int water, int dairy, int total) {
         SharedPreferences bestScore = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = bestScore.edit();
@@ -103,42 +127,47 @@ public class CalculatorResults extends AppCompatActivity {
         editNew.putInt(TOTAL, total);
 
         editNew.commit();
-
         return;
-
     }
-    private Bitmap takeScreenshot() {
-        View screenshot = findViewById(android.R.id.content).getRootView();
-        screenshot.setDrawingCacheEnabled(true);
-        return screenshot.getDrawingCache();
-    } //takes the screenshot
-    private void saveScreenshot(Bitmap finalBitmap, String image_name) {
 
-        String root = Environment.getExternalStorageDirectory().toString();
-        File myDir = new File(root);
-        myDir.mkdirs();
-        String fname = "Image-" + image_name+ ".jpg";
-        File file = new File(myDir, fname);
-        if (file.exists()) file.delete();
-        Log.i("LOAD", root + fname);
-        try {
-            FileOutputStream out = new FileOutputStream(file);
-            finalBitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
-            out.flush();
-            out.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+    //Screenshot button
     private void saveResults(){
         Button saveButton = (Button) findViewById(R.id.save);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bitmap bitmap = takeScreenshot();
-                saveScreenshot(bitmap, "results");
-
+                requestPermissionAndSave();
             }
         });
+    }
+    //Used from: http://www.androidtutorialshub.com/android-take-screenshot-programmatically/
+    private void requestPermissionAndSave() {
+        Dexter.withActivity(this)
+                .withPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .withListener(new PermissionListener() {
+                    @Override
+                    public void onPermissionGranted(PermissionGrantedResponse response) {
+                        //Makes screenshot
+                        bitmap = ScreenshotUtil.getInstance().takeScreenshotForScreen(activity);
+                        if (bitmap != null) {
+                            String path = Environment.getExternalStorageDirectory().toString() + "/CarbonCounter.png";
+                            FileUtil.getInstance().storeBitmap(bitmap, path);
+                            Toast.makeText(activity, "Saved in " + path, Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(activity, "NULL", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    @Override
+                    public void onPermissionDenied(PermissionDeniedResponse response) {
+                        // check for permanent denial of permission
+                        if (response.isPermanentlyDenied()) {
+                            Toast.makeText(activity, "DENIED", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+                        token.continuePermissionRequest();
+                    }
+                }).check();
     }
 }

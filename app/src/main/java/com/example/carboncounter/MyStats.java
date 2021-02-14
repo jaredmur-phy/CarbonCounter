@@ -1,7 +1,6 @@
 package com.example.carboncounter;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +8,11 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+/*
+Shows user statistics about their footprint
+- Their most recent calculation
+- Their best calculation
+*/
 public class MyStats extends AppCompatActivity {
 
     public static final String SHARED_PREFS = "sharedPrefs";
@@ -43,12 +47,22 @@ public class MyStats extends AppCompatActivity {
                 TextView bestWater = (TextView) findViewById(R.id.waterBest);
                 TextView bestDairy = (TextView) findViewById(R.id.dairyBest);
                 TextView bestTotal = (TextView) findViewById(R.id.totalBest);
+                TextView beefRecent = (TextView) findViewById(R.id.beefRecent);
+                TextView gasRecent = (TextView) findViewById(R.id.gasRecent);
+                TextView waterRecent = (TextView) findViewById(R.id.waterRecent);
+                TextView dairyRecent = (TextView) findViewById(R.id.dairyRecent);
+                TextView totalRecent = (TextView) findViewById(R.id.totalRecent);
 
                 beefBest.setText("");
                 gasBest.setText("");
                 bestWater.setText("");
                 bestDairy.setText("");
                 bestTotal.setText("");
+                beefRecent.setText("");
+                gasRecent.setText("");
+                waterRecent.setText("");
+                dairyRecent.setText("");
+                totalRecent.setText("");
             }
         });
     }
@@ -72,7 +86,6 @@ public class MyStats extends AppCompatActivity {
         bestWater.setText(String.valueOf(water));
         bestDairy.setText(String.valueOf(dairy));
         bestTotal.setText(String.valueOf(total));
-
 
     }
 
@@ -98,6 +111,4 @@ public class MyStats extends AppCompatActivity {
         totalRecent.setText(String.valueOf(total));
 
     }
-
-
 }
