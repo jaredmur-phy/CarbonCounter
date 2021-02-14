@@ -2,15 +2,23 @@ package com.example.carboncounter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
 import static java.lang.Math.round;
 
 public class CalculatorResults extends AppCompatActivity {
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String BEEF =  "beef";
+    public static final String GAS = "gas";
+    public static final String WATER = "water";
+    public static final String DAIRY = "dairy";
+    public static final String TOTAL = "total";
 
     User user = User.getInstance();
     @Override
@@ -44,7 +52,7 @@ public class CalculatorResults extends AppCompatActivity {
         total.setText(String.valueOf(totalResult));
 
         double compareResults = (double) (totalResult / 55.35714) * 100; //avg for BC
-        int roundedResult = Integer.parseInt(String.valueOf(compareResults));
+        int roundedResult = (int)(Math.round(compareResults));
         TextView compared = (TextView) findViewById(R.id.compared);
         if(compareResults < 100.0) {
             String result = String.valueOf(roundedResult);
@@ -58,6 +66,26 @@ public class CalculatorResults extends AppCompatActivity {
     }
 
     private void saveStats(int beef, int gas, int water, int dairy, int total) {
-        //
+        SharedPreferences bestScore = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = bestScore.edit();
+        if(beef < bestScore.getInt(BEEF, 9999)) {
+            editor.putInt(BEEF, beef);
+        }
+        if(gas < bestScore.getInt(GAS, 9999)) {
+            editor.putInt(GAS, gas);
+        }
+        if(water < bestScore.getInt(WATER, 9999)) {
+            editor.putInt(WATER, gas);
+        }
+        if(dairy < bestScore.getInt(DAIRY, 9999)) {
+            editor.putInt(DAIRY, gas);
+        }
+        if(total < bestScore.getInt(TOTAL, 9999)) {
+            editor.putInt(TOTAL, gas);
+        }
+
+        editor.commit();
+        return;
+
     }
 }

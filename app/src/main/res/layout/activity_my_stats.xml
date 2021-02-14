@@ -8,6 +8,50 @@
     tools:context=".MyStats">
 
     <TextView
+        android:id="@+id/beefGasHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Gas:"
+        android:textColor="@color/colorText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beefBestHeader" />
+
+    <TextView
+        android:id="@+id/bestWaterHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Water:"
+        android:textColor="@color/colorText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beefGasHeader" />
+
+    <TextView
+        android:id="@+id/bestDairyHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Dairy:"
+        android:textColor="@color/colorText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bestWaterHeader" />
+
+    <TextView
+        android:id="@+id/bestTotalHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Total:"
+        android:textColor="@color/colorText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bestDairyHeader" />
+
+    <TextView
         android:id="@+id/thisWeekHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,9 +66,81 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="356dp"
-        android:text="Last Week:"
+        android:text="Best Week:"
+        android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/beefBestHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Meat:"
+        android:textColor="@color/colorText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lastWeekHeader" />
+
+    <TextView
+        android:id="@+id/meatBest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorText"
+        app:layout_constraintStart_toEndOf="@+id/beefBestHeader"
+        app:layout_constraintTop_toBottomOf="@+id/lastWeekHeader" />
+
+    <TextView
+        android:id="@+id/gasBest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorText"
+        app:layout_constraintStart_toEndOf="@+id/beefGasHeader"
+        app:layout_constraintTop_toBottomOf="@+id/meatBest" />
+
+    <TextView
+        android:id="@+id/waterBest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorText"
+        app:layout_constraintStart_toEndOf="@+id/bestWaterHeader"
+        app:layout_constraintTop_toBottomOf="@+id/gasBest" />
+
+    <TextView
+        android:id="@+id/dairyBest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorText"
+        app:layout_constraintStart_toEndOf="@+id/bestDairyHeader"
+        app:layout_constraintTop_toBottomOf="@+id/waterBest" />
+
+    <TextView
+        android:id="@+id/totalBest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorText"
+        app:layout_constraintStart_toEndOf="@+id/bestTotalHeader"
+        app:layout_constraintTop_toBottomOf="@+id/dairyBest" />
+
+    <Button
+        android:id="@+id/resetBttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
